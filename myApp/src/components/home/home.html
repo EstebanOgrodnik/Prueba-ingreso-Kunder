@@ -1,0 +1,68 @@
+<!-- Generated template for the HomeComponent component -->
+<ion-header>
+  <ion-navbar>
+    <ion-title class="kunderLogo">
+      <span class="telecom">telecom</span>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear class="menuButton"></button>  
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding scroll="false">
+
+  <ion-grid class="banner" *ngIf="product && product?.show">
+    <ion-row>
+      <ion-card>
+        <ion-list>
+
+          <ion-item *ngIf="product?.type == 'cellphone'" text-wrap align-items-center>
+            <ion-thumbnail item-start text-center>
+              <img src="{{ product?.productImg }}"/>
+              <!-- <ion-img [src]="product.productImg"></ion-img> Lazy Loading -->
+            </ion-thumbnail>
+            <h2>{{ product?.productName }}</h2>
+            <p>{{ product?.productDescription }}</p>
+          </ion-item>
+
+          <ion-item *ngIf="product?.type == 'plan'" [style.backgroundImage]="'url(' + product.backgroundImg + ')'" class="img-background">
+            <ion-grid>
+              <ion-row align-items-center>
+                <ion-col col text-wrap>
+                  <p item-start ion-text color="light">{{ product?.productDescription }}</p>
+                </ion-col>
+                <ion-col col-auto>
+                  <a href="{{ product?.link }}"><button ion-button item-end>{{ product?.buttonText }}</button></a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+        </ion-list>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+  <div class="header">
+  </div>
+
+  <div class="buttons">
+    <button class="buttonsHome buttonConsumo">
+      <span>Consumo</span>
+    </button>
+    <button class="buttonsHome buttonPlan">
+      <span>Mi Plan</span>
+    </button>
+    <button class="buttonsHome buttonBolsas">
+      <span>Mis bolsas</span>
+    </button>
+    <button class="buttonsHome buttonBeneficios">
+      <span>Beneficios</span>
+    </button>
+  </div>
+</ion-content>
+<ion-footer class="informationFooter">
+  <a class="shuffleLeft">Sucursales</a>
+  <a class="shuffleRight">Consultas</a>
+</ion-footer>

@@ -1,0 +1,12 @@
+{
+  "name": "myApp",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {},
+  "proxies": [
+    {
+      "path":"/product",
+      "proxyUrl": "https://hack.kunderlabs.com/exam/telecom/api/products/new"
+    }
+  ]
+}
